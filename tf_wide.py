@@ -1,6 +1,4 @@
-import sys, random, os, itertools, gc, collections
 import numpy as np
-from operator import itemgetter as ig
 from sklearn.metrics import roc_auc_score
 import tensorflow as tf
 from scipy.sparse import csr_matrix
@@ -37,7 +35,6 @@ def load_to_sparse(loadFile):
 
     return X_sparse_out, y_out
 
-
 def input_fn(X, y):
     feature_cols = {'codes': X}
     label = tf.constant(y, shape=[len(y)])
@@ -50,7 +47,6 @@ model = tf.estimator.LinearClassifier(
         model_dir='/tmp',
         optimizer = 'Ftrl',
         feature_columns=wide_columns)
-
 
 for i in range(10):
     model.train(input_fn=lambda: input_fn(*load_to_sparse(trainFile)), steps = 1)
