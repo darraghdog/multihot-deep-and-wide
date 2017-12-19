@@ -6,9 +6,9 @@ import tensorflow as tf
 from scipy.sparse import csr_matrix
 from math import exp, log, sqrt
 
-trainFile = '/Users/dhanley2/Documents/pfizer/data/dat.train'
-validFile = '/Users/dhanley2/Documents/pfizer/data/dat.valid'
-testFile  = '/Users/dhanley2/Documents/pfizer/data/dat.test'
+trainFile = 'data/dat.train'
+validFile = 'data/dat.valid'
+testFile  = 'data/dat.test'
 max_codes = 521
 
 
